@@ -1,5 +1,6 @@
 import authRoute from "../routes/authRoute";
 import interestRoute from "../routes/interestRoute";
+import postRouter from "../routes/postRouth";
 
 import { logger } from "../logger/winston";
 
@@ -20,6 +21,8 @@ module.exports = function () {
 
   app.use("/api/v1/auth", authRoute);
   app.use("/api/v1/interest", interestRoute);
+  app.use("/api/v1/post", postRouter);
+
 
 
 

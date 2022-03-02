@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.UserInterestDetail, { foreignKey: { name: 'userId' } })
+      User.hasMany(models.Post, { foreignKey: { name: 'userId' } })
+
 
     }
   }
