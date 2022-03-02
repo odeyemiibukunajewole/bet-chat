@@ -52,12 +52,13 @@
     "sequelize-cli": "^6.2.0",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
-    "winston": "^3.3.3"
-  },
-  "devDependencies": {
+    "winston": "^3.3.3",
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.6"
+  },
+  "devDependencies": {
+
   }
 }
