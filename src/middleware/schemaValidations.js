@@ -1,12 +1,26 @@
-// import { editProfileSchema } from "../schema/editProfile";
-// export const editProfileValidate = (req, res, next) => {
-//   try {
-//     const { error, value } = editProfileSchema.validate(req.body);
-//     if (error)
-//       return res.status(409).send({ message: "Validation failed", error });
+import { interestSchema } from "../schema/interest";
+import { userSchema } from "../schema/user";
 
-//     return next();
-//   } catch (error) {
-//     throw new Error(error);
-//   }
-// };
+export const interestValidate = (req, res, next) => {
+  try {
+    const { error, value } = interestSchema.validate(req.body);
+    if (error)
+      return res.status(409).send({ message: "Validation failed", error });
+
+    return next();
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const usertValidate = (req, res, next) => {
+  try {
+    const { error, value } = userSchema.validate(req.body);
+    if (error)
+      return res.status(409).send({ message: "Validation failed", error });
+
+    return next();
+  } catch (error) {
+    throw new Error(error);
+  }
+};

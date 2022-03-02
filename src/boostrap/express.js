@@ -1,9 +1,8 @@
 import authRoute from "../routes/authRoute";
-
-
-
+import interestRoute from "../routes/interestRoute";
 
 import { logger } from "../logger/winston";
+
 
 const express = require("express");
 const http = require("http");
@@ -20,6 +19,8 @@ module.exports = function () {
   app.use(bodyParser.urlencoded({ extended: false }));
 
   app.use("/api/v1/auth", authRoute);
+  app.use("/api/v1/interest", interestRoute);
+
 
 
 
