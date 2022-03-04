@@ -101,13 +101,11 @@ class AuthController {
         attributes: { exclude: ["password"] },
         include: [{
           model: UserInterestDetail,
-          where: { userId: req.user.id },
-          attributes: ["userId"],
-          include: [{
-            model: Interest,
-            attributes: ["interest"],
-
-          }]
+          where: {
+            userId: {
+              [Op.in]: [req.user.id]
+            }
+          },
         }],
         raw: true,
       });

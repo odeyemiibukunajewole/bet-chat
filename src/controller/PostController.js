@@ -1,7 +1,7 @@
 import db from "../../models";
 import App from "../helpers";
 import { Op } from "sequelize";
-const { Post } = db;
+const { Post, User, Interest, UserInterestDetail } = db;
 
 class PostController {
     static async createPost(req, res) {
@@ -18,7 +18,30 @@ class PostController {
 
     static async getUserPost(req, res) {
         try {
-            const posts = await Post.findAll({});
+
+            const { interestId } = await UserInterestDetail.findOne({
+                where: { userId: req.user.id }
+            })
+            const posts = await Post.findAll({
+                include: [{
+                    model: User,
+                    where: {
+                        id: {
+                            [Op.ne]: req.user.id
+                        }
+                    },
+                    attributes: { exclude: ["password"] },
+                    include: [{
+                        model: UserInterestDetail,
+                        where: {
+                            interestId: {
+                                [Op.eq]: interestId
+                            }
+                        }
+                    }]
+                }]
+            });
+
             if (!posts)
                 return res.status(200).send({ message: "Successful", posts: [] });
 
