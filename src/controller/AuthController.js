@@ -52,7 +52,7 @@ class AuthController {
           address,
           countryCode,
         },
-        { raw: true }
+        { raw: true },
       );
       const userInterests = interests.map((item) => ({
         userId: user.id,
@@ -75,6 +75,7 @@ class AuthController {
       const { email, password } = req.body;
       const user = await User.findOne({
         where: { email },
+        attributes: { exclude: ["password"] },
         raw: true,
       });
       if (!user)
