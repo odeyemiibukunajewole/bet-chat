@@ -75,7 +75,7 @@ class AuthController {
       const { email, password } = req.body;
       const user = await User.findOne({
         where: { email },
-        attributes: { exclude: ["password"] },
+        exclude: ["password"],
         raw: true,
       });
       if (!user)
