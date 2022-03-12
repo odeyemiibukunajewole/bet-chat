@@ -3,7 +3,6 @@ import App from "../helpers";
 class AuthMiddleWare {
   static async verifyToken(req, res, next) {
     try {
-      console.log("req ===>", req)
       const token = req.headers["authorization"];
       if (!token)
         return res.status(401).send({ message: "Authorization failed" });
@@ -11,7 +10,7 @@ class AuthMiddleWare {
       req.user = user;
       next();
     } catch (error) {
-      res.status(401).send({ message: "Authorization failed" });
+      res.status(401).send({ message: "Authorization failed", error });
     }
   }
 
