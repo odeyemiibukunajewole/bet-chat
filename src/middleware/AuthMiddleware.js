@@ -10,7 +10,7 @@ class AuthMiddleWare {
       req.user = user;
       next();
     } catch (error) {
-      res.status(401).send({ message: "Authorization failed", error });
+      res.status(401).send({ message: "Authorization failed" });
     }
   }
 
