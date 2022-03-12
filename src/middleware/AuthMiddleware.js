@@ -1,10 +1,10 @@
 import App from "../helpers";
 
 class AuthMiddleWare {
-   static async verifyToken(req, res, next) {
+  static async verifyToken(req, res, next) {
     try {
+      console.log("req ===>", req)
       const token = req.headers["authorization"];
-
       if (!token)
         return res.status(401).send({ message: "Authorization failed" });
       const user = await App.decodeToken(token);
