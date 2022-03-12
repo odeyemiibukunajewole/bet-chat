@@ -68,14 +68,14 @@ DB_USERNAME_PROD=*******
 
 - to register on the platform , copy the sign up API and post the user info to the endpoints.
 
-- 1. for the interests, there are list of interest that have been created. to get the user interest call the enpoint below
+- for the interests, there are list of interest that have been created. to get the user interest call the enpoint below
 
 ```
 https://bet-chat.herokuapp.com/api/v1/interest/ALL
 
 ```
 
-- 2. call the sign up end point to register and post to the to the body
+-  call the sign up end point to register and post to the to the body
 
 ```
 https://bet-chat.herokuapp.com//api/v1/auth/signup
@@ -100,7 +100,7 @@ https://bet-chat.herokuapp.com//api/v1/auth/signup
 ## User create post.
 
 - For a user to post ,call the post endpoint and post
-- pass the authorization token in the header and call the profile endpoint
+- pass the authorization token in the header
 
 ```
 https://bet-chat.herokuapp.com/api/v1/post/create
