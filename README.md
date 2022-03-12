@@ -34,7 +34,7 @@ git clone https://github.com/odeyemiibukunajewole/bet-chat.git
 MAILGUN_API_KEY=*****e908901122001*****0caba357331f53****ff5ac-156db0f1-693b2c6f****
 MAILGUN_DOMAIN=betChat.com
 DB_HOST=localhost
-DB_PASSWORD=*******Ibk110409052@12*******
+DB_PASSWORD=*******I9052@12*******
 DB_PORT=3**306**
 DB_DATABASE=bet_chat
 DB_DIALECT=mysql
